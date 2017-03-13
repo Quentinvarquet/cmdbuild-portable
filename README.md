@@ -8,7 +8,7 @@ Le répertoire doit se trouver dans un path sans espace. (Par exemple à la racine
 
 * Telecharger la dernière version de cmdbuild : https://sourceforge.net/projects/cmdbuild/files/latest/download
 
-* Dans l'archive téléchargée, copier le fichier cmdbuild-$version.war dans c:\cmdbuild_portable\tomcat\webapps et renommez le en cmdbuild.war
+* Dans l'archive téléchargée, copiez le fichier cmdbuild-$version.war dans c:\cmdbuild_portable\tomcat\webapps et renommez le en cmdbuild.war
 
 * Dans le dossier c:\cmdbuild_portable\tomcat\bin, ouvrez le fichier catalina.bat et modifier la deuxième ligne pour indiquer où se trouve JDK sur votre PC 
 
