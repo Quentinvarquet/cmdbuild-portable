@@ -20,4 +20,4 @@ Le répertoire doit se trouver dans un path sans espace. (Par exemple à la racine
 
 * Lancez votre base postgresql : PostgreSQLPortable.exe
 
-* Une fois tomcat + postgresql démarrés. Rendez vous sur http://localhost:8080/cmdbuild
+* Une fois tomcat + postgresql démarrés. Rendez vous sur http://127.0.0.1:8080/cmdbuild
