@@ -6,7 +6,7 @@ Le répertoire doit se trouver dans un path sans espace. (Par exemple à la racine
 
 # Configuration 
 
-* Telecharger la dernière version de cmdbuild : https://sourceforge.net/projects/cmdbuild/files/latest/download
+* Téléchargez la dernière version de cmdbuild : https://sourceforge.net/projects/cmdbuild/files/latest/download
 
 * Dans l'archive téléchargée, copiez le fichier cmdbuild-$version.war dans c:\cmdbuild_portable\tomcat\webapps et renommez le en cmdbuild.war
 
@@ -20,4 +20,4 @@ Le répertoire doit se trouver dans un path sans espace. (Par exemple à la racine
 
 * Lancez votre base postgresql : PostgreSQLPortable.exe
 
-* Une fois tomcat + postgresql démarré. Rendez vous sur http://localhost:8080/cmdbuild
+* Une fois tomcat + postgresql démarrés. Rendez vous sur http://localhost:8080/cmdbuild
