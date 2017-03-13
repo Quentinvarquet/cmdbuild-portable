@@ -1,5 +1,5 @@
 @echo off
-set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_101
+set JAVA_HOME=..\..\java
 rem Licensed to the Apache Software Foundation (ASF) under one or more
 rem contributor license agreements.  See the NOTICE file distributed with
 rem this work for additional information regarding copyright ownership.
