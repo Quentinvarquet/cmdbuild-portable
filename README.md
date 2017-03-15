@@ -8,13 +8,8 @@ Le répertoire doit se trouver dans un path sans espace. (Par exemple à la raci
 
 # Configuration 
 
-* Téléchargez la dernière version de cmdbuild : https://sourceforge.net/projects/cmdbuild/files/latest/download
+* Démarrage de votre base Postgresl : postgresql\PostgreSQLPortable.exe
 
-* Dans l'archive téléchargée, copiez le fichier cmdbuild-$version.war dans c:\cmdbuild_portable\tomcat\webapps et renommez le en cmdbuild.war
-		
+* Démarrage de Tomcat : tomcat\bin\startup.bat
 
-* Une fois fait, vous pouvez sauvegarder et lancer tomcat. Toujours dans le dossier c:\cmdbuild_portable\tomcat\bin : startup.bat
-
-* Lancez votre base postgresql : PostgreSQLPortable.exe
-
-* Une fois tomcat + postgresql démarrés. Rendez vous sur http://127.0.0.1:8080/
+* Une fois tomcat et postgresql démarrés. Rendez vous sur http://127.0.0.1:8080/
