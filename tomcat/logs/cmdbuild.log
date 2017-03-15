@@ -1,0 +1,125 @@
+INFO  2017-03-15 12:26:31 [cmdbuild] loading configurations
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] resetting category 'null' ('null' means default)
+ERROR 2017-03-15 12:26:36 [cmdbuild] error getting last applied patch version
+java.lang.IllegalStateException: database connection not configured
+	at org.cmdbuild.services.DefaultDataSourceFactory$DefaultDataSource.configureDatasource(DefaultDataSourceFactory.java:43)
+	at org.cmdbuild.services.DefaultDataSourceFactory$DefaultDataSource.getConnection(DefaultDataSourceFactory.java:57)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:390)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:470)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
+	at org.cmdbuild.dao.driver.postgres.EntryTypeCommands.findAllClasses(EntryTypeCommands.java:99)
+	at org.cmdbuild.dao.driver.postgres.PostgresDriver.findAllClasses(PostgresDriver.java:50)
+	at org.cmdbuild.dao.driver.AbstractDBDriver.findClass(AbstractDBDriver.java:209)
+	at org.cmdbuild.dao.driver.AbstractDBDriver.findClass(AbstractDBDriver.java:204)
+	at org.cmdbuild.dao.view.DBDataView.findClass(DBDataView.java:82)
+	at org.cmdbuild.dao.view.DBDataView.findClass(DBDataView.java:35)
+	at org.cmdbuild.dao.view.ForwardingDataView.findClass(ForwardingDataView.java:41)
+	at org.cmdbuild.services.localization.LocalizedDataView.findClass(LocalizedDataView.java:153)
+	at org.cmdbuild.dao.view.ForwardingDataView.findClass(ForwardingDataView.java:41)
+	at org.cmdbuild.services.DefaultPatchManager.getOrCreateClass(DefaultPatchManager.java:413)
+	at org.cmdbuild.services.DefaultPatchManager.access$700(DefaultPatchManager.java:68)
+	at org.cmdbuild.services.DefaultPatchManager$3.<init>(DefaultPatchManager.java:287)
+	at org.cmdbuild.services.DefaultPatchManager.reset(DefaultPatchManager.java:283)
+	at org.cmdbuild.services.DefaultPatchManager.reset(DefaultPatchManager.java:273)
+	at org.cmdbuild.services.DefaultPatchManager.<init>(DefaultPatchManager.java:266)
+	at org.cmdbuild.spring.configuration.Migration.patchManager(Migration.java:38)
+	at org.cmdbuild.spring.configuration.Migration$$EnhancerBySpringCGLIB$$1523f113.CGLIB$patchManager$3(<generated>)
+	at org.cmdbuild.spring.configuration.Migration$$EnhancerBySpringCGLIB$$1523f113$$FastClassBySpringCGLIB$$fb089b26.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:355)
+	at org.cmdbuild.spring.configuration.Migration$$EnhancerBySpringCGLIB$$1523f113.patchManager(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1123)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1143)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1046)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:220)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:332)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1066)
+	at org.cmdbuild.services.soap.CMDBfPolicyFeature.getMdr(CMDBfPolicyFeature.java:35)
+	at org.cmdbuild.services.soap.CMDBfPolicyFeature.getEndpointPolicy(CMDBfPolicyFeature.java:56)
+	at org.cmdbuild.services.soap.CMDBfPolicyFeature.initializeProvider(CMDBfPolicyFeature.java:47)
+	at org.apache.cxf.feature.AbstractFeature.initialize(AbstractFeature.java:45)
+	at org.apache.cxf.frontend.ServerFactoryBean.applyFeatures(ServerFactoryBean.java:249)
+	at org.apache.cxf.frontend.ServerFactoryBean.create(ServerFactoryBean.java:211)
+	at org.apache.cxf.jaxws.JaxWsServerFactoryBean.create(JaxWsServerFactoryBean.java:211)
+	at org.apache.cxf.jaxws.EndpointImpl.getServer(EndpointImpl.java:460)
+	at org.apache.cxf.jaxws.EndpointImpl.doPublish(EndpointImpl.java:338)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:255)
+	at org.apache.cxf.jaxws.EndpointImpl.publish(EndpointImpl.java:543)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1706)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:446)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:328)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5118)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5634)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:899)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1260)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:2002)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+INFO  2017-03-15 12:26:36 [cmdbuild] fetched patches (122): [C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-06.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-07.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-08.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-09.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.0.3-10.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-06.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-07.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-08.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.1.1-09.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.0-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.1-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.1-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.1-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.2-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.2-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.3-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.3-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.2.3-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.0-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.0-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.0-06.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.1-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.1-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.1-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.1-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.3.1-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.4.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.4.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\1.5.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.0-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.0-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.3-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.3-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.3-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.3-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.0.4-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.0-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.2-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.2-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.2-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.4-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.4-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.4-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.5-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.5-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.5-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.6-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.6-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.7-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.7-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.8-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.9-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.9-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.1.9-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-06.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-07.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-08.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-09.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-10.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-11.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-12.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.0-13.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.1-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.2-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.2.2-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-06.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.1-07.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.2-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.2-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.4-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.4-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.4-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.4-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.5-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.5-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.5-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.5-04.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.5-05.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.3.5-06.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.0-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.0-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.0-03.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.1-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.2-01.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.2-02.sql, C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.3-01.sql]
+INFO  2017-03-15 12:26:36 [cmdbuild] last available patch is '{Optional.absent()=DefaultPatchManager.DefaultPatch[version=2.4.3-01,description=Create database,category=<null>,file=C:\cmdbuild-portable\tomcat\webapps\ROOT\WEB-INF\patches\2.4.3-01.sql]}'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:36 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:37 [cmdbuild] getting all-in-one 'interface org.cmdbuild.services.event.Observer'
+INFO  2017-03-15 12:26:38 [cmdbuild] Initializing ParameterTransformers
+INFO  2017-03-15 12:26:38 [cmdbuild] Transformer for org.apache.commons.fileupload.FileItem: org.cmdbuild.servlets.utils.transformer.FileItemTransformer
+INFO  2017-03-15 12:26:38 [cmdbuild] Transformer for org.json.JSONObject: org.cmdbuild.servlets.utils.transformer.JSONObjectTransformer
+INFO  2017-03-15 12:26:38 [cmdbuild] Transformer for org.json.JSONArray: org.cmdbuild.servlets.utils.transformer.JSONArrayTransformer
+INFO  2017-03-15 12:26:38 [cmdbuild] Initializer custom ParameterBuilders
+INFO  2017-03-15 12:26:38 [cmdbuild] clearing DMS temporary folder
+INFO  2017-03-15 12:26:45 [jsonrpc ] Calling url /utils/gettranslationobject
+INFO  2017-03-15 12:26:46 [jsonrpc ] Calling url /utils/listavailabletranslations
+INFO  2017-03-15 12:26:47 [jsonrpc ] Calling url /utils/getdefaultlanguage
+INFO  2017-03-15 12:26:47 [jsonrpc ] Calling url /utils/listavailabletranslations
