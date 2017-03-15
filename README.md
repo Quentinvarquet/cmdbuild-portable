@@ -1,3 +1,5 @@
+Version CMDBUILD : 2.4.3 (fevrier 2017)
+
 # Installation 
 
 Le répertoire doit se trouver dans un path sans espace. (Par exemple à la racine de votre disque C:\)
